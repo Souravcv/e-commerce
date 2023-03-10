@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "655215626728",
+    "project_id": "e-commerce-signin-a3682",
+    "storage_bucket": "e-commerce-signin-a3682.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655215626728:android:7c7d166a6d06563e21bc5d",
+        "android_client_info": {
+          "package_name": "com.example.e_comores"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655215626728-hnmnq999jkrasppoivd08jf36qmn9ea0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkKn4rYadh7ly88eKf2sJrUSFEWAJf9uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655215626728-hnmnq999jkrasppoivd08jf36qmn9ea0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
