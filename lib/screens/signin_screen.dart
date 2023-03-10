@@ -21,50 +21,52 @@ class _SigninScreenState extends State<SigninScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-          colors: [
-            hexStringToColors("CB2B93"),
-            hexStringToColors("9546C4"),
-            hexStringToColors("5E6174"),
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        )),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 100,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              reusableTextField(
-                  "Email Id", Icons.person, false, _emailTextController),
-              const SizedBox(
-                height: 20,
-              ),
-              reusableTextField("Enter password", Icons.lock_open_outlined,
-                  false, _passwordTextController),
-              SizedBox(
-                height: 20,
-              ),
-              signInSignupButton(context, true, () {
-                FirebaseAuth.instance
-                    .signInWithEmailAndPassword(
-                        email: _emailTextController.text,
-                        password: _passwordTextController.text)
-                    .then((value) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
-                }).onError((error, stackTrace) {
-                  print("errorrrrrrrrrrrrrrrrrrrrrrr${error.toString()}");
-                });
-              }),
-              signUpOption()
-            ],
+        appBar: AppBar(
+        backgroundColor: Colors.black38,
+        elevation: 0,
+        title: const Text(
+          "Logon",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Container(
+             
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                reusableTextField(
+                    "Email Id", Icons.person, false, _emailTextController),
+                const SizedBox(
+                  height: 20,
+                ),
+                reusableTextField("Enter password", Icons.lock_open_outlined,
+                    false, _passwordTextController),
+                SizedBox(
+                  height: 20,
+                ),
+                signInSignupButton(context, true, () {
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                          email: _emailTextController.text,
+                          password: _passwordTextController.text)
+                      .then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  }).onError((error, stackTrace) {
+                    print("errorrrrrrrrrrrrrrrrrrrrrrr${error.toString()}");
+                  });
+                }),
+                signUpOption()
+              ],
+            ),
           ),
         ),
       ),
@@ -86,7 +88,7 @@ class _SigninScreenState extends State<SigninScreen> {
       children: [
         const Text(
           "Don't have account?",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
         ),
         GestureDetector(
           onTap: () {
@@ -95,7 +97,7 @@ class _SigninScreenState extends State<SigninScreen> {
           },
           child: const Text(
             "Sign Up",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontWeight: FontWeight.bold),
           ),
         ),
        const SizedBox(height: 30,),

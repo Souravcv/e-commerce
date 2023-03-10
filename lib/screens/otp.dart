@@ -1,3 +1,4 @@
+import 'package:e_comores/screens/home_screen.dart';
 import 'package:e_comores/screens/phone.dart';
 import 'package:e_comores/screens/signin_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -78,10 +79,7 @@ class _MyOtpState extends State<MyOtp> {
                     code = value;
                   },
                  length: 6,
-                  validator: (s) {
-                    return s == '2222' ? null : 'Pin is incorrect';
-                    
-                  },
+                
                   pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                   showCursor: true,
                   onCompleted: (pin) => print(pin),
@@ -91,10 +89,8 @@ class _MyOtpState extends State<MyOtp> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SigninScreen()));
+                     Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()));
                     },
                     child: const Text("Sent the code"),
                     style: ElevatedButton.styleFrom(

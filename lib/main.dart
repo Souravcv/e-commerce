@@ -2,6 +2,7 @@ import 'package:e_comores/mainpage.dart';
 import 'package:e_comores/screens/otp.dart';
 import 'package:e_comores/screens/phone.dart';
 import 'package:e_comores/screens/signin_screen.dart';
+import 'package:e_comores/screens/signup_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Myphone(),
+      home:const Mainpage(),
       routes: {'phone':(context) => Myphone(),'otp':(context) => MyOtp()},
     );
   }
