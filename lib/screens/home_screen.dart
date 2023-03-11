@@ -1,9 +1,7 @@
-import 'package:e_comores/screens/signup_screen.dart';
+import 'package:e_comores/screens/page_one.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:line_icons/line_icon.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedintext = 0;
   static List<Widget> _widgetOption = <Widget>[
-    Container(),
+    Home(),
     Container(),
     Container(),
     Container(),
@@ -78,8 +76,4 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 
-//  print("Logouttttttttttttttttt");
-//               FirebaseAuth.instance.signOut().then((value) {
-//                 Navigator.push(context,
-//                     MaterialPageRoute(builder: (context) =>const SignUpScreen()));
-//               });
+ 
