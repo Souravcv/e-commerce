@@ -77,14 +77,16 @@ class _HomeState extends State<Home> {
                   child: IconButton(
                       onPressed: () {
                         print("Logouttttttttttttttttt");
-              FirebaseAuth.instance.signOut().then((value) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) =>const SignUpScreen()));
-              });
+                        FirebaseAuth.instance.signOut().then((value) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignUpScreen()));
+                        });
                         print("hello");
                       },
                       icon: const Icon(
-                        Icons.search_outlined,
+                        Icons.logout,
                         size: 28,
                       )),
                 ),
@@ -154,11 +156,16 @@ class _HomeState extends State<Home> {
                           )),
                           //  Image.asset(imageList[i],height:  180,width: 110,)
                           Image.asset("assets/slide1.png"),
-                        ]),
+                          
+                        ],
+                        ),
                   )
               ],
+              
             ),
           ),
+
+          
           SizedBox(
             height: 20,
           ),
@@ -321,9 +328,11 @@ class _HomeState extends State<Home> {
                 ),
               ]),
             ),
-          ), 
-         const SizedBox(height: 10 ,),
-         GridItems(),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          GridItems(),
         ],
       ),
     );

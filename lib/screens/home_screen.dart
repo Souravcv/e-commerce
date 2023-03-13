@@ -1,3 +1,4 @@
+import 'package:e_comores/screens/cart_screen.dart';
 import 'package:e_comores/screens/page_one.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedintext = 0;
   static List<Widget> _widgetOption = <Widget>[
     Home(),
-    Container(),
+    CartScreen(),
     Container(),
     Container(),
   ];
