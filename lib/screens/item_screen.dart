@@ -17,23 +17,23 @@ class ItemScreen extends StatelessWidget {
           Container(
             height: MediaQuery.of(context).size.height / 2,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            decoration:const BoxDecoration(
                 color: Color(0xFFD4ECF7),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
                     bottomRight: Radius.circular(30))),
             child: Stack(
               children: [
-                Center(
+               const Center(
                   child: ProductImagesSlider(),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 15, right: 20),
+                  padding:const EdgeInsets.only(left: 15, right: 20),
                   child: InkWell(
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    child: Icon(
+                    child:const Icon(
                       Icons.arrow_back_ios_new,
                       size: 30,
                     ),
@@ -42,19 +42,19 @@ class ItemScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+         const SizedBox(
             height: 10,
           ),
           Padding(
-            padding: EdgeInsets.all(20),
+            padding:const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+               const Text(
                   "Apple Watch series 6",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                 ),
-                SizedBox(
+              const  SizedBox(
                   height: 10,
                 ),
                 Row(
@@ -70,12 +70,12 @@ class ItemScreen extends StatelessWidget {
                               itemCount: 5,
                               itemSize: 25,
                               itemBuilder: (context, _) => IconButton(
-                                  onPressed: () {}, icon: Icon(Icons.star)),
+                                  onPressed: () {}, icon:const Icon(Icons.star)),
                               onRatingUpdate: (rating) {}),
                           const SizedBox(
                             width: 5,
                           ),
-                          Text("(450)")
+                        const  Text("(450)")
                         ],
                       ),
                     )
@@ -97,10 +97,10 @@ class ItemScreen extends StatelessWidget {
                       color: Colors.black45,
                       decoration: TextDecoration.lineThrough),
                 ),
-                SizedBox(
+              const  SizedBox(
                   height: 20,
                 ),
-                Text(
+              const  Text(
                   "The Apple Watch is designed to work in tandem with an iPhone and offers a range of features including fitness tracking, communication tools, mobile payments, music playback, and more. It has a variety of sensors built-in, including a heart rate monitor, accelerometer, and gyroscope, and can track activities like running, cycling, swimming, and more.",
                   style: TextStyle(fontSize: 16),
                   textAlign: TextAlign.justify,
@@ -112,7 +112,7 @@ class ItemScreen extends StatelessWidget {
       )),
       bottomNavigationBar: Container(
         height: 70,
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        margin:const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -123,7 +123,7 @@ class ItemScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.redAccent),
-                child: Text(
+                child:const Text(
                   "Add To Cart",
                   style: TextStyle(
                       fontSize: 30,
@@ -138,8 +138,8 @@ class ItemScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width / 5,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFD4ECF7)),
-                child: IconButton(onPressed: (){}, icon: Icon(Icons.favorite_outline,color: Colors.redAccent,size: 30,)),
+                    color:const Color(0xFFD4ECF7)),
+                child: IconButton(onPressed: (){}, icon:const Icon(Icons.favorite_outline,color: Colors.redAccent,size: 30,)),
               ),
             ),
           ],

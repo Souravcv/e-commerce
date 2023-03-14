@@ -1,10 +1,11 @@
+
+import 'package:e_comores/screens/cart_screen.dart';
 import 'package:e_comores/screens/home_screen.dart';
 import 'package:e_comores/screens/phone.dart';
-import 'package:e_comores/screens/signin_screen.dart';
+import 'package:e_comores/screens/signup_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:pinput/pinput.dart';
 
 class MyOtp extends StatefulWidget {
@@ -22,12 +23,12 @@ class _MyOtpState extends State<MyOtp> {
     final defaultPinTheme = PinTheme(
       width: 56,
       height: 56,
-      textStyle: TextStyle(
+      textStyle:const TextStyle(
           fontSize: 20,
           color: Color.fromRGBO(30, 60, 87, 1),
           fontWeight: FontWeight.w600),
       decoration: BoxDecoration(
-        border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
+        border: Border.all(color:const Color.fromRGBO(234, 239, 243, 1)),
         borderRadius: BorderRadius.circular(20),
       ),
     );
@@ -48,10 +49,12 @@ class _MyOtpState extends State<MyOtp> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(onPressed: (){
-           Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Myphone()));
-        }, icon: Icon(Icons.arrow_back_ios_rounded)),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) =>const SignUpScreen()));
+            },
+            icon:const Icon(Icons.arrow_back_ios_rounded)),
       ),
       body: SafeArea(
         child: Container(
@@ -75,11 +78,10 @@ class _MyOtpState extends State<MyOtp> {
                   height: 20,
                 ),
                 Pinput(
-                  onChanged: (value){
+                  onChanged: (value) {
                     code = value;
                   },
-                 length: 6,
-                
+                  length: 6,
                   pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                   showCursor: true,
                   onCompleted: (pin) => print(pin),
@@ -89,10 +91,12 @@ class _MyOtpState extends State<MyOtp> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                     Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomeScreen()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) =>const HomeScreen()));
+                      // HomeScreen();
+                      // CartScreen
                     },
-                    child: const Text("Sent the code"),
+                    child:const  Text("Sent the code"),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.black26,
                         shape: RoundedRectangleBorder(
@@ -103,21 +107,22 @@ class _MyOtpState extends State<MyOtp> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     TextButton(
-                        onPressed: ()async {
+                        onPressed: () async {
                           try {
-                            //  Navigator.push(context,
-                        // MaterialPageRoute(builder: (context) => Myphone()));
-                         PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: Myphone.varify, smsCode: code);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>const  Myphone()));
+                            PhoneAuthCredential credential =
+                                PhoneAuthProvider.credential(
+                                    verificationId: Myphone.varify,
+                                    smsCode: code);
 
-    // Sign the user in (or link) with the credential
-    await auth.signInWithCredential(credential);
+                            // Sign the user in (or link) with the credential
+                            await auth.signInWithCredential(credential);
                           } catch (e) {
                             print("Wrong otppppppppppppppppppppppp");
                           }
-
-
-
-                        
                         },
                         child: const Text(
                           "Edit Phone Number?",

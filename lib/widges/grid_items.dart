@@ -16,19 +16,19 @@ class GridItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: pNames.length,
-      physics: NeverScrollableScrollPhysics(),
+      physics:const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 0.7,
         crossAxisCount: 2,
       ),
       itemBuilder: (context, index) {
         return Container(
-          margin: EdgeInsets.all(10),
+          margin:const EdgeInsets.all(10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xFFD4ECF7),
-              boxShadow: [
+              color:const Color(0xFFD4ECF7),
+              boxShadow:const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 4,
@@ -36,29 +36,29 @@ class GridItems extends StatelessWidget {
                 )
               ]),
           child: Padding(
-            padding: EdgeInsets.all(12),
+            padding:const EdgeInsets.all(12),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                  const  Text(
                       "30% off",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 12),
                     ),
                     IconButton(
-                        onPressed: () {}, icon: Icon(Icons.favorite_border))
+                        onPressed: () {}, icon:const Icon(Icons.favorite_border))
                   ],
                 ),
-                SizedBox(
+               const SizedBox(
                   height: 10,
                 ),
                 Padding(
-                  padding: EdgeInsets.all(10),
+                  padding:const EdgeInsets.all(10),
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder:(context)=> ItemScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder:(context)=>const ItemScreen()));
                       
                     },
                     child: Image.asset(
@@ -70,7 +70,7 @@ class GridItems extends StatelessWidget {
                 ),
               
                 Padding(
-                  padding: EdgeInsets.all(8),
+                  padding:const EdgeInsets.all(8),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

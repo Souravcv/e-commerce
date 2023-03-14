@@ -1,6 +1,5 @@
 import 'package:e_comores/screens/cart_screen.dart';
 import 'package:e_comores/screens/page_one.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -19,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Container(),
     Container(),
   ];
-  final user = FirebaseAuth.instance.currentUser!;
+  // final user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ]
         ),
         child: SafeArea(
-          child:Padding(padding: EdgeInsets.symmetric(horizontal: 15,vertical: 8),
+          child:Padding(padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 8),
           child: GNav(
             rippleColor: Colors.grey[300]!,
             hoverColor: Colors.grey[100]!,
@@ -45,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
             activeColor: Colors.white,
             iconSize: 24,
             
-            padding: EdgeInsets.symmetric(horizontal:20,vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal:20,vertical: 12),
             duration: const Duration(microseconds: 400),
             tabBackgroundColor: Colors.redAccent,
 

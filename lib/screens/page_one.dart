@@ -134,7 +134,7 @@ class _HomeState extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                             const Text(
                                 "30% off on winter collection",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 21),
@@ -145,7 +145,7 @@ class _HomeState extends State<Home> {
                                 decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(20)),
-                                child: Text(
+                                child:const Text(
                                   "Shop Now",
                                   style: TextStyle(
                                       color: Colors.redAccent,
@@ -166,11 +166,11 @@ class _HomeState extends State<Home> {
           ),
 
           
-          SizedBox(
+         const SizedBox(
             height: 20,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding:const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
@@ -191,16 +191,16 @@ class _HomeState extends State<Home> {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Padding(
-              padding: EdgeInsets.only(left: 10),
+              padding:const EdgeInsets.only(left: 10),
               child: Row(children: [
                 Container(
                   height: 50,
                   width: 50,
-                  margin: EdgeInsets.all(8),
+                  margin:const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
                           color: Colors.black26,
                           blurRadius: 4,
@@ -208,18 +208,18 @@ class _HomeState extends State<Home> {
                         )
                       ]),
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding:const EdgeInsets.all(8),
                     child: Image.asset("assets/icon1.png"),
                   ),
                 ),
                 Container(
                   height: 50,
                   width: 50,
-                  margin: EdgeInsets.all(8),
+                  margin:const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
                           color: Colors.black26,
                           blurRadius: 4,
@@ -227,18 +227,18 @@ class _HomeState extends State<Home> {
                         )
                       ]),
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding:const EdgeInsets.all(8),
                     child: Image.asset("assets/icon5.png"),
                   ),
                 ),
                 Container(
                   height: 50,
                   width: 50,
-                  margin: EdgeInsets.all(8),
+                  margin:const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
                           color: Colors.black26,
                           blurRadius: 4,
@@ -246,18 +246,18 @@ class _HomeState extends State<Home> {
                         )
                       ]),
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding:const EdgeInsets.all(8),
                     child: Image.asset("assets/icon2.png"),
                   ),
                 ),
                 Container(
                   height: 50,
                   width: 50,
-                  margin: EdgeInsets.all(8),
+                  margin:const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
                           color: Colors.black26,
                           blurRadius: 4,
@@ -265,18 +265,18 @@ class _HomeState extends State<Home> {
                         )
                       ]),
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding:const EdgeInsets.all(8),
                     child: Image.asset("assets/icon3.png"),
                   ),
                 ),
                 Container(
                   height: 50,
                   width: 50,
-                  margin: EdgeInsets.all(8),
+                  margin:const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
                           color: Colors.black26,
                           blurRadius: 4,
@@ -284,18 +284,18 @@ class _HomeState extends State<Home> {
                         )
                       ]),
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding:const EdgeInsets.all(8),
                     child: Image.asset("assets/icon4 (1).png"),
                   ),
                 ),
                 Container(
                   height: 50,
                   width: 50,
-                  margin: EdgeInsets.all(8),
+                  margin:const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
                           color: Colors.black26,
                           blurRadius: 4,
@@ -303,18 +303,18 @@ class _HomeState extends State<Home> {
                         )
                       ]),
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding:const EdgeInsets.all(8),
                     child: Image.asset("assets/icon6.png"),
                   ),
                 ),
                 Container(
                   height: 50,
                   width: 50,
-                  margin: EdgeInsets.all(8),
+                  margin:const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
                           color: Colors.black26,
                           blurRadius: 4,
@@ -322,7 +322,7 @@ class _HomeState extends State<Home> {
                         )
                       ]),
                   child: Padding(
-                    padding: EdgeInsets.all(8),
+                    padding:const EdgeInsets.all(8),
                     child: Image.asset("assets/icon7.png"),
                   ),
                 ),

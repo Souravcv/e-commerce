@@ -6,6 +6,7 @@ import 'package:e_comores/utils/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 
 class SigninScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class SigninScreen extends StatefulWidget {
 class _SigninScreenState extends State<SigninScreen> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
+  final GoogleSignIn _googleSignin = GoogleSignIn();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +51,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
                 reusableTextField("Enter password", Icons.lock_open_outlined,
                     false, _passwordTextController),
-                SizedBox(
+               const SizedBox(
                   height: 20,
                 ),
                 signInSignupButton(context, true, () {
@@ -59,12 +61,20 @@ class _SigninScreenState extends State<SigninScreen> {
                           password: _passwordTextController.text)
                       .then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                        MaterialPageRoute(builder: (context) =>const HomeScreen()));
                   }).onError((error, stackTrace) {
                     print("errorrrrrrrrrrrrrrrrrrrrrrr${error.toString()}");
                   });
                 }),
-                signUpOption()
+                signUpOption(),
+                ElevatedButton(onPressed: ()async{
+                  
+                  await _googleSignin.signIn().then((value) => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>const HomeScreen())));
+                },
+                 child:const Text("Google"))
               ],
             ),
           ),
@@ -93,7 +103,7 @@ class _SigninScreenState extends State<SigninScreen> {
         GestureDetector(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SignUpScreen()));
+                MaterialPageRoute(builder: (context) =>const SignUpScreen()));
           },
           child: const Text(
             "Sign Up",

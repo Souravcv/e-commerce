@@ -60,13 +60,13 @@ class _MyphoneState extends State<Myphone> {
                         child: TextFormField(
                           controller: countrycode,
                           keyboardType: TextInputType.phone,
-                          decoration: InputDecoration(border: InputBorder.none),
+                          decoration: const InputDecoration(border: InputBorder.none),
                         ),
                       ),
                       const SizedBox(
                         width: 10,
                       ),
-                      Text(
+                    const  Text(
                         '|',
                         style: TextStyle(fontSize: 33, color: Colors.black),
                       ),
@@ -79,7 +79,7 @@ class _MyphoneState extends State<Myphone> {
                             phone=value;
                           },
                           keyboardType: TextInputType.phone,
-                          decoration: InputDecoration(
+                          decoration:const InputDecoration(
                               border: InputBorder.none, hintText: "Phone"),
                         ),
                       ),
@@ -89,34 +89,8 @@ class _MyphoneState extends State<Myphone> {
                 const SizedBox(
                   height: 20,
                 ),
-                SizedBox(
-                  height: 45,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () async {
-                     
-                      await FirebaseAuth.instance.verifyPhoneNumber(
-                        phoneNumber: '${countrycode.text+phone}',
-                        verificationCompleted:
-                            (PhoneAuthCredential credential) {},
-                        verificationFailed: (FirebaseAuthException e) {},
-                        codeSent: (String verificationId, int? resendToken) {
-                          Myphone.varify= verificationId;
-                           Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyOtp()));
-                        },
-                        codeAutoRetrievalTimeout: (String verificationId) {},
-                      );
-                    },
-                    child: const Text("Sent the code"),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.black26,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                  ),
-                ),
-              ],
-            ),
+               
+           ] ),
           ),
         ),
       ),
