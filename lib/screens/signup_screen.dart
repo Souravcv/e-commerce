@@ -125,7 +125,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       // print(value.phoneCode.toString());
                                       countryco = value.phoneCode.toString();
                                       setState(() {
-                                        
+                                        countryco = value.phoneCode.toString();
                                       });
                                     }
                                     
