@@ -93,6 +93,7 @@ class _MyOtpState extends State<MyOtp> {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) =>const HomeScreen()));
+                          AndroidSmsAutofillMethod;
                       // HomeScreen();
                       // CartScreen
                     },

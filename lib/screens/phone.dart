@@ -57,10 +57,13 @@ class _MyphoneState extends State<Myphone> {
                       ),
                       SizedBox(
                         width: 40,
-                        child: TextFormField(
-                          controller: countrycode,
-                          keyboardType: TextInputType.phone,
-                          decoration: const InputDecoration(border: InputBorder.none),
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 6),
+                          decoration:const BoxDecoration(
+                            color: Colors.black,
+
+                          ),
+                          child: Text("+91",style: TextStyle(color: Colors.white),),
                         ),
                       ),
                       const SizedBox(

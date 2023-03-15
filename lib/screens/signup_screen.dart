@@ -4,6 +4,7 @@ import 'package:e_comores/screens/otp.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:country_picker/country_picker.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -14,6 +15,7 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  String countryco = "";
   TextEditingController countrycode = TextEditingController();
   var phone = "";
   @override
@@ -26,6 +28,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _userNameTextController = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {
@@ -115,12 +118,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 ),
                                 SizedBox(
                                   width: 40,
-                                  child: TextFormField(
-                                    controller: countrycode,
-                                    keyboardType: TextInputType.phone,
-                                    decoration:const InputDecoration(
-                                        border: InputBorder.none),
-                                  ),
+                                  child: TextButton(onPressed: (){
+                                    showCountryPicker(context: context,
+                                     onSelect: (Country value){
+                                      // print(value.countryCode.toString());
+                                      // print(value.phoneCode.toString());
+                                      countryco = value.phoneCode.toString();
+                                      setState(() {
+                                        
+                                      });
+                                    }
+                                    
+                                    );
+
+                                  },
+                                   child: Text(countryco,style: TextStyle(color: Colors.black45),) ),
+                                   
                                 ),
                                 const SizedBox(
                                   width: 10,
@@ -153,6 +166,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 45,
                             width: double.infinity,
+                            
                             child: ElevatedButton(
                               onPressed: () async {
                                  FirebaseAuth.instance;

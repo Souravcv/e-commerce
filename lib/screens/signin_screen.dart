@@ -69,10 +69,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 signUpOption(),
                 ElevatedButton(onPressed: ()async{
                   
-                  await _googleSignin.signIn().then((value) => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>const HomeScreen())));
+                  await _googleSignin.signIn().then((value) => HomeScreen);
                 },
                  child:const Text("Google"))
               ],
