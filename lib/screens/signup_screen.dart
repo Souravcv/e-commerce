@@ -115,6 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               children: [
                                 const SizedBox(
                                   width: 10,
+                                  
                                 ),
                                 SizedBox(
                                   width: 40,

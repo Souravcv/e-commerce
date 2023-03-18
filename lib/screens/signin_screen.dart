@@ -1,4 +1,5 @@
 import 'package:e_comores/reusable_widget/reusable_widget.dart';
+import 'package:e_comores/screens/google_signin/google_signin.dart';
 import 'package:e_comores/screens/home_screen.dart';
 import 'package:e_comores/screens/signup_screen.dart';
 import 'package:e_comores/services/auth_services.dart';
@@ -7,6 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 
 
 class SigninScreen extends StatefulWidget {
@@ -69,7 +71,8 @@ class _SigninScreenState extends State<SigninScreen> {
                 signUpOption(),
                 ElevatedButton(onPressed: ()async{
                   
-                  await _googleSignin.signIn().then((value) => HomeScreen);
+                 final provider = Provider.of<GoogleSignInProvider>(context,listen: false);
+                 provider.googleLogin();
                 },
                  child:const Text("Google"))
               ],

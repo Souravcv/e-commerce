@@ -1,5 +1,4 @@
 
-import 'package:e_comores/screens/cart_screen.dart';
 import 'package:e_comores/screens/home_screen.dart';
 import 'package:e_comores/screens/phone.dart';
 import 'package:e_comores/screens/signup_screen.dart';
@@ -40,7 +39,7 @@ class _MyOtpState extends State<MyOtp> {
 
     final submittedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration?.copyWith(
-        color: Color.fromRGBO(234, 239, 243, 1),
+        color:const Color.fromRGBO(234, 239, 243, 1),
       ),
     );
     var code = "";
@@ -119,10 +118,10 @@ class _MyOtpState extends State<MyOtp> {
                                     verificationId: Myphone.varify,
                                     smsCode: code);
 
-                            // Sign the user in (or link) with the credential
+                            // Sign the u $ser in (or link) with the credential
                             await auth.signInWithCredential(credential);
                           } catch (e) {
-                            print("Wrong otppppppppppppppppppppppp");
+                            print("Wrong otppppppppppppppppp");
                           }
                         },
                         child: const Text(
