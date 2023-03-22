@@ -28,15 +28,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _emailTextController = TextEditingController();
   TextEditingController _userNameTextController = TextEditingController();
-  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        leading:
-            IconButton(onPressed: () {}, icon:const Icon(Icons.arrow_back_ios_new)),
+        leading: IconButton(
+            onPressed: () {}, icon: const Icon(Icons.arrow_back_ios_new)),
         backgroundColor: Colors.black38,
         elevation: 0,
         title: const Text(
@@ -75,7 +74,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             email: _emailTextController.text,
                             password: _passwordTextController.text)
                         .then((value) {
-                    
                       ElevatedButton.styleFrom(
                           primary: Colors.black26,
                           shape: RoundedRectangleBorder(
@@ -83,7 +81,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>const HomeScreen()));
+                              builder: (context) => const HomeScreen()));
 
                       print(
                           "hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
@@ -91,8 +89,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       print("printjjjjjjjjjjj${error.toString()}");
                     });
                   }),
-                 const Text("Or",style: TextStyle(fontWeight: FontWeight.bold),),
-                const  SizedBox(
+                  const Text(
+                    "Or",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
@@ -115,31 +116,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               children: [
                                 const SizedBox(
                                   width: 10,
-                                  
                                 ),
                                 SizedBox(
                                   width: 40,
-                                  child: TextButton(onPressed: (){
-                                    showCountryPicker(context: context,
-                                     onSelect: (Country value){
-                                      // print(value.countryCode.toString());
-                                      // print(value.phoneCode.toString());
-                                      countryco = value.phoneCode.toString();
-                                      setState(() {
-                                        countryco = value.phoneCode.toString();
-                                      });
-                                    }
-                                    
-                                    );
-
-                                  },
-                                   child: Text(countryco,style: TextStyle(color: Colors.black45),) ),
-                                   
+                                  child: TextButton(
+                                      onPressed: () {
+                                        showCountryPicker(
+                                            context: context,
+                                            onSelect: (Country value) {
+                                              // print(value.countryCode.toString());
+                                              // print(value.phoneCode.toString());
+                                              countryco =
+                                                  value.phoneCode.toString();
+                                              setState(() {
+                                                countryco =
+                                                    value.phoneCode.toString();
+                                              });
+                                            });
+                                      },
+                                      child: Text(
+                                        '+' + countryco,
+                                        style: TextStyle(color: Colors.black45),
+                                      )),
                                 ),
                                 const SizedBox(
                                   width: 10,
                                 ),
-                               const Text(
+                                const Text(
                                   '|',
                                   style: TextStyle(
                                       fontSize: 33, color: Colors.black),
@@ -153,7 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       phone = value;
                                     },
                                     keyboardType: TextInputType.phone,
-                                    decoration:const InputDecoration(
+                                    decoration: const InputDecoration(
                                         border: InputBorder.none,
                                         hintText: "Phone"),
                                   ),
@@ -167,10 +170,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 45,
                             width: double.infinity,
-                            
                             child: ElevatedButton(
                               onPressed: () async {
-                                 FirebaseAuth.instance;
+                                FirebaseAuth.instance;
                                 await FirebaseAuth.instance.verifyPhoneNumber(
                                   phoneNumber: '${countrycode.text + phone}',
                                   verificationCompleted:
@@ -179,11 +181,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                       (FirebaseAuthException e) {},
                                   codeSent: (String verificationId,
                                       int? resendToken) {
-                                   
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) =>const MyOtp()));
+                                            builder: (context) =>
+                                                const MyOtp()));
                                   },
                                   codeAutoRetrievalTimeout:
                                       (String verificationId) {},

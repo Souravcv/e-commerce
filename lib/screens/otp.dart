@@ -1,4 +1,3 @@
-
 import 'package:e_comores/screens/home_screen.dart';
 import 'package:e_comores/screens/phone.dart';
 import 'package:e_comores/screens/signup_screen.dart';
@@ -22,12 +21,12 @@ class _MyOtpState extends State<MyOtp> {
     final defaultPinTheme = PinTheme(
       width: 56,
       height: 56,
-      textStyle:const TextStyle(
+      textStyle: const TextStyle(
           fontSize: 20,
           color: Color.fromRGBO(30, 60, 87, 1),
           fontWeight: FontWeight.w600),
       decoration: BoxDecoration(
-        border: Border.all(color:const Color.fromRGBO(234, 239, 243, 1)),
+        border: Border.all(color: const Color.fromRGBO(234, 239, 243, 1)),
         borderRadius: BorderRadius.circular(20),
       ),
     );
@@ -39,7 +38,7 @@ class _MyOtpState extends State<MyOtp> {
 
     final submittedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration?.copyWith(
-        color:const Color.fromRGBO(234, 239, 243, 1),
+        color: const Color.fromRGBO(234, 239, 243, 1),
       ),
     );
     var code = "";
@@ -51,9 +50,11 @@ class _MyOtpState extends State<MyOtp> {
         leading: IconButton(
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) =>const SignUpScreen()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SignUpScreen()));
             },
-            icon:const Icon(Icons.arrow_back_ios_rounded)),
+            icon: const Icon(Icons.arrow_back_ios_rounded)),
       ),
       body: SafeArea(
         child: Container(
@@ -90,13 +91,15 @@ class _MyOtpState extends State<MyOtp> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) =>const HomeScreen()));
-                          AndroidSmsAutofillMethod;
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()));
+                      AndroidSmsAutofillMethod;
                       // HomeScreen();
                       // CartScreen
                     },
-                    child:const  Text("Sent the code"),
+                    child: const Text("Sent the code"),
                     style: ElevatedButton.styleFrom(
                         primary: Colors.black26,
                         shape: RoundedRectangleBorder(
@@ -112,7 +115,7 @@ class _MyOtpState extends State<MyOtp> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>const  Myphone()));
+                                    builder: (context) => const Myphone()));
                             PhoneAuthCredential credential =
                                 PhoneAuthProvider.credential(
                                     verificationId: Myphone.varify,
