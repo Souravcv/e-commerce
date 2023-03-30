@@ -1,4 +1,4 @@
-import 'package:e_comores/screens/otp.dart';
+import 'package:e_comores/auth/otp.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';

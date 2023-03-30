@@ -1,6 +1,6 @@
 import 'package:e_comores/reusable_widget/reusable_widget.dart';
-import 'package:e_comores/screens/home_screen.dart';
-import 'package:e_comores/screens/otp.dart';
+import 'package:e_comores/screens/home.dart';
+import 'package:e_comores/auth/otp.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';

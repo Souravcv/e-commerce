@@ -1,7 +1,7 @@
 import 'package:e_comores/reusable_widget/reusable_widget.dart';
-import 'package:e_comores/screens/google_signin/google_signin.dart';
-import 'package:e_comores/screens/home_screen.dart';
-import 'package:e_comores/screens/signup_screen.dart';
+import 'package:e_comores/auth/google_signin/google_signin.dart';
+import 'package:e_comores/auth/signup_screen.dart';
+import 'package:e_comores/screens/home.dart';
 import 'package:e_comores/services/auth_services.dart';
 import 'package:e_comores/utils/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';

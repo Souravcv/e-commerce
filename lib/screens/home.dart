@@ -1,5 +1,6 @@
-import 'package:e_comores/screens/cart_screen.dart';
-import 'package:e_comores/screens/page_one.dart';
+
+import 'package:e_comores/screens/cartscreen.dart';
+import 'package:e_comores/screens/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -13,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedintext = 0;
   static List<Widget> _widgetOption = <Widget>[
-    Home(),
+    HomePage(),
     CartScreen(),
     Container(),
     Container(),
@@ -74,6 +75,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
- 

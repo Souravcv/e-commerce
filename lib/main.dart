@@ -1,9 +1,9 @@
 import 'package:e_comores/mainpage.dart';
-import 'package:e_comores/screens/google_signin/google_signin.dart';
-import 'package:e_comores/screens/otp.dart';
-import 'package:e_comores/screens/phone.dart';
-import 'package:e_comores/screens/signin_screen.dart';
-import 'package:e_comores/screens/signup_screen.dart';
+import 'package:e_comores/auth/google_signin/google_signin.dart';
+import 'package:e_comores/auth/otp.dart';
+import 'package:e_comores/auth/phone.dart';
+import 'package:e_comores/auth/signin_screen.dart';
+import 'package:e_comores/auth/signup_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
